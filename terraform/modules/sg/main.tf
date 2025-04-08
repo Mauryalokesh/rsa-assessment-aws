@@ -1,13 +1,13 @@
-resource "aws_security_group" "web_sg" {
-  name        = "web_sg"
-  description = "Allow HTTP & SSH"
+resource "aws_security_group" "web" {
+  name        = "web-sg"
+  description = "Allow HTTP and SSH"
   vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["YOUR_PUBLIC_IP/32"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
