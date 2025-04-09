@@ -19,8 +19,8 @@ variable "ami" {
 
 # Add this at the bottom
 variable "allowed_ip" {
-  description = "Your IP in CIDR format (e.g., 123.123.123.123/32)"
+  description = "Your IP in CIDR format"
   type        = string
-  default     = "163.116.212.64/24"
+  default     = "0.0.0.0/0"
 }
 
