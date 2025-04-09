@@ -86,6 +86,13 @@ resource "aws_security_group" "db" {
     protocol        = "icmp"
     security_groups = [aws_security_group.backend.id] # Allow ping from backend
   }
+  ingress {
+    description     = "Allow ICMP (ping) from Bastion"
+    from_port       = -1
+    to_port         = -1
+    protocol        = "icmp"
+    security_groups = [aws_security_group.hello_sg.id]
+  }
 
   egress {
     from_port   = 0
