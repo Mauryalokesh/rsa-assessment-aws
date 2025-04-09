@@ -8,3 +8,19 @@ variable "aws_profile" {
   default     = "default"
 }
 
+variable "vpc_cidr" {
+  default = "10.0.0.0/16"
+}
+
+variable "ami" {
+  description = "AMI ID to launch EC2 instances"
+  default     = "ami-05238ab1443fdf48f"
+}
+
+# Add this at the bottom
+variable "allowed_ip" {
+  description = "Your IP in CIDR format (e.g., 123.123.123.123/32)"
+  type        = string
+  default     = "163.116.212.64/24"
+}
+

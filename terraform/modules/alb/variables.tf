@@ -1,15 +1,4 @@
-variable "vpc_id" {
-  type = string
-}
-
-variable "public_subnet_ids" {
-  type = list(string)
-}
-
-variable "sg_id" {
-  type = string
-}
-
-variable "instance_id" {
-  type = string
-}
+variable "vpc_id" {}
+variable "public_subnet_ids" {}
+variable "sg_id" {}
+variable "target_instance_id" {}

@@ -1,11 +1,4 @@
-variable "vpc_id" {
-  type = string
-}
-
-variable "subnet_id" {
-  type = string
-}
-
-variable "sg_id" {
-  type = string
-}
+variable "name" {}
+variable "ami" {}
+variable "subnet_id" {}
+variable "sg_id" {}
