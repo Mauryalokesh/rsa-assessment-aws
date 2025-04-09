@@ -41,3 +41,13 @@ module "alb" {
   sg_id              = module.sg.alb_sg_id
   target_instance_id = module.frontend_ec2.instance_id
 }
+
+module "hello_world_ec2" {
+  source    = "./modules/ec2"
+  name      = "hello-world"
+  ami       = var.ami
+  subnet_id  = module.vpc.public_subnet_ids[1] # this should point to public subnet
+  sg_id     = module.sg.hello_sg_id
+
+}
+
