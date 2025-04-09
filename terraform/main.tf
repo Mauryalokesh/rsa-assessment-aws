@@ -46,7 +46,7 @@ module "hello_world_ec2" {
   source    = "./modules/ec2"
   name      = "hello-world"
   ami       = var.ami
-  subnet_id  = module.vpc.public_subnet_ids[1] # this should point to public subnet
+  subnet_id = module.vpc.public_subnet_ids[1] # this should point to public subnet
   sg_id     = module.sg.hello_sg_id
 
 }
