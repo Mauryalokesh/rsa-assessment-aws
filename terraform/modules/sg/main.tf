@@ -27,6 +27,13 @@ resource "aws_security_group" "backend" {
     protocol        = "tcp"
     security_groups = [aws_security_group.frontend.id]
   }
+  ingress {
+    from_port       = -1
+    to_port         = -1
+    protocol        = "icmp"
+    security_groups = [aws_security_group.frontend.id] # Allow ping from frontend
+  }
+
 
   egress {
     from_port   = 0
@@ -64,6 +71,13 @@ resource "aws_security_group" "db" {
     to_port         = 3306
     protocol        = "tcp"
     security_groups = [aws_security_group.backend.id] # Allow only backend access
+  }
+
+  ingress {
+    from_port       = -1
+    to_port         = -1
+    protocol        = "icmp"
+    security_groups = [aws_security_group.backend.id] # Allow ping from backend
   }
 
   egress {
